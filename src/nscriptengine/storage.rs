@@ -4,6 +4,6 @@ globals: HashMap<Box<str>,NscriptVariable>
 }
 impl NscriptStorage{
     pub fn new()->NscriptStorage{
-        NscriptStorage {  }
+        NscriptStorage { globals:HashMap::new() }
     }
 }
