@@ -10,7 +10,7 @@ pub fn new()->Nscript{
 }
 // each line instruction for execution.
 pub trait NscriptLine{
-    fn exec(&mut self) ->Option<NscriptVariable>;
+    fn exec(&mut self) -> Option<NscriptVariable>;
 }
 // holds the tokenized code which the interpreter uses to exectue
 pub struct NscriptExecutableBlock{

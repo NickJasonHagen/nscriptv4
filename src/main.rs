@@ -9,6 +9,7 @@ pub use nscriptengine::core::*;
 pub use nscriptengine::parser::*;
 pub use nscriptengine::storage::*;
 pub use nscriptengine::types::*;
+pub use std::collections::HashMap;
 fn main() {
     println!("Hello, world!");
 }
