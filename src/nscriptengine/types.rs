@@ -39,3 +39,48 @@ impl NscriptValue for NscriptString{
         return self.value.parse::<f64>().unwrap_or(0.0);
     }
 }
+
+struct NscriptInt{
+    value:u64,
+}
+impl NscriptInt{
+    pub fn new(data:u64)->NscriptInt{
+        NscriptInt{
+            value:data,
+        }
+    }
+}
+impl NscriptValue for NscriptInt{
+    fn string(&mut self)->String{
+        return self.value.to_string();
+    }
+    fn int(&mut self)->u64{
+        return self.value.clone();
+    }
+    fn float(&mut self)->f64{
+        return self.value as f64;
+    }
+}
+
+
+struct NscriptFloat{
+    value:f64,
+}
+impl NscriptFloat{
+    pub fn new(data:f64)->NscriptFloat{
+        NscriptFloat{
+            value:data,
+        }
+    }
+}
+impl NscriptValue for NscriptFloat{
+    fn string(&mut self)->String{
+        return self.value.to_string();
+    }
+    fn int(&mut self)->u64{
+        return self.value as u64;
+    }
+    fn float(&mut self)->f64{
+        return self.value.clone();
+    }
+}
