@@ -11,6 +11,24 @@ pub fn new()->NscriptVariable{
             vec: Vec::new(),
         }
     }
+    pub fn newstring(data:String)->NscriptVariable{
+        let d = NscriptString{
+            value:data,
+        };
+        NscriptVariable{value:Box::new(d),vec:Vec::new()}
+    }
+    pub fn newint(data:u64)->NscriptVariable{
+        let d = NscriptInt{
+            value:data,
+        };
+        NscriptVariable{value:Box::new(d),vec:Vec::new()}
+    }
+    pub fn newfloat(data:f64)->NscriptVariable{
+        let d = NscriptFloat{
+            value:data,
+        };
+        NscriptVariable{value:Box::new(d),vec:Vec::new()}
+    }
 }
 // trait for a value, allows you to add your own.
 pub trait NscriptValue{
